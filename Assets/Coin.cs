@@ -21,7 +21,6 @@ public class Coin : MonoBehaviour
         if (other.gameObject.tag == "Table")
         {
             transform.SetParent(other.transform);
-            //this.gameObject.transform.parent = GameObject.Find("Table").transform;
         }
     }
 
@@ -30,7 +29,6 @@ public class Coin : MonoBehaviour
         if (other.gameObject.tag == "Table")
         {
             transform.SetParent(null);
-            //this.gameObject.transform.DetachChildren();
         }
     }
 }
