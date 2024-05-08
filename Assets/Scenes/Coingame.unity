@@ -670,6 +670,7 @@ GameObject:
   - component: {fileID: 822455166}
   - component: {fileID: 822455165}
   - component: {fileID: 822455167}
+  - component: {fileID: 822455168}
   m_Layer: 0
   m_Name: GM
   m_TagString: Untagged
@@ -690,9 +691,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabCoin: {fileID: 5687242450128036020, guid: 14234f2a41f7cd44585d43ce71d7d5f8, type: 3}
-  MyCoins: {fileID: 640961974}
-  coinCount: 5
-  gameOverText: {fileID: 659546607}
   XRangeMin: -1.575412
   XRangeMax: -1.6
   ZRangeMin: 3.198478
@@ -734,6 +732,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 12, y: 2, z: 12}
   m_Center: {x: -18.98, y: 0.56, z: 4.25}
+--- !u!114 &822455168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822455164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67c5f1ee22cb8934c8a7d19b32fcc482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rundomCoin: {fileID: 822455165}
+  MyCoins: {fileID: 640961974}
+  coinCount: 5
+  gameOverText: {fileID: 659546607}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
