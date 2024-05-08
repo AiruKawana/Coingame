@@ -689,10 +689,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e20149d2b83440d48af616f03fdba87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Coin: {fileID: 5687242450128036020, guid: 14234f2a41f7cd44585d43ce71d7d5f8, type: 3}
+  prefabCoin: {fileID: 5687242450128036020, guid: 14234f2a41f7cd44585d43ce71d7d5f8, type: 3}
   MyCoins: {fileID: 640961974}
-  Coincount: 5
-  GameOvertext: {fileID: 659546607}
+  coinCount: 5
+  gameOverText: {fileID: 659546607}
+  XRangeMin: -1.575412
+  XRangeMax: -1.6
+  ZRangeMin: 3.198478
+  ZRangeMax: 3.2
+  Height: 6
 --- !u!4 &822455166
 Transform:
   m_ObjectHideFlags: 0
@@ -920,7 +925,7 @@ Transform:
   m_GameObject: {fileID: 1332561731}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.5754113, y: 2.41, z: 3.1984775}
+  m_LocalPosition: {x: -4.3254113, y: 2.41, z: 3.1984775}
   m_LocalScale: {x: 7, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1047,6 +1052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   length: 2
   speed: 0.7
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!65 &1414883481
 BoxCollider:
   m_ObjectHideFlags: 0

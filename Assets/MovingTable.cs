@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Table : MonoBehaviour
+public class MovingTable : MonoBehaviour
 {
-    public float length = 4.0f;
-    public float speed = 3.0f;
+    [SerializeField] private float length = 4.0f;
+    [SerializeField] private float speed = 3.0f;
 
-    private Vector3 startPos;
+    [SerializeField] private Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()

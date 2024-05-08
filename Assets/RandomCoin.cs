@@ -6,54 +6,60 @@ using TMPro;
 
 public class RandomCoin : MonoBehaviour
 {
-    public GameObject Coin;
+    [SerializeField] private GameObject prefabCoin;
 
-    public TextMeshProUGUI MyCoins;
+    [SerializeField] private TextMeshProUGUI MyCoins;
 
-    public int Coincount = 5;
+    [SerializeField] private int coinCount = 5;
 
-    public GameObject GameOvertext;
+    [SerializeField] private GameObject gameOverText;
+
+    [SerializeField] private float XRangeMin = -1.575412f;
+    [SerializeField] private float XRangeMax = -1.6f;
+    [SerializeField] private float ZRangeMin = 3.198478f;
+    [SerializeField] private float ZRangeMax = 3.2f;
+    [SerializeField] private float Height = 6.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Vector3 coinPosition = new Vector3(-1.575412f, 4.0f, 3.198478f);
         for (int r = 1; r <= 10; r++)
         {
             CoinGenerate();
         }
 
-        MyCoins.text = "My Coin:" + Coincount;
+        MyCoins.text = "My Coin:" + coinCount;
 
-        GameOvertext.SetActive(false);
+        gameOverText.SetActive(false);
     }
 
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
 
-            if (Coincount > 0)
+            if (coinCount > 0)
             {
                 CoinGenerate();
-                Coincount -= 1;
+                coinCount -= 1;
             }
 
-            if(Coincount == 0)
+            if(coinCount == 0)
             {
-                GameOvertext.SetActive(true);
+                gameOverText.SetActive(true);
             }
-
-            MyCoins.text = "My Coin:" + Coincount;
         }
+
+        MyCoins.text = "My Coin:" + coinCount;
     }
 
     public void CoinGenerate()
     {
-        float x = Random.Range(-1.575412f, -1.6f);
-        float z = Random.Range(3.198478f, 3.2f);
-        Vector3 coinPosition = new Vector3(x, 6.0f, z);
-        Instantiate(Coin, coinPosition, Quaternion.identity);
+        float x = Random.Range(XRangeMin, XRangeMax);
+        float z = Random.Range(ZRangeMin, ZRangeMax);
+        Vector3 coinPosition = new Vector3(x, Height, z);
+        Instantiate(prefabCoin, coinPosition, Quaternion.identity);
     }
 
 
@@ -61,8 +67,9 @@ public class RandomCoin : MonoBehaviour
     {
         if(collision.gameObject.tag == "Coin")
         {
+            Debug.Log(coinCount);
+            coinCount += 1;
             Destroy(collision.gameObject);
-            Coincount += 1;
         }
     }
 
